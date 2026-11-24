@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  
+    <defs>
+      <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#0a071b" />
+        <stop offset="100%" stop-color="#150f2e" />
+      </linearGradient>
+      <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#f97316" />
+        <stop offset="100%" stop-color="#8b5cf6" />
+      </linearGradient>
+      <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="15" result="blur" />
+        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+      </filter>
+    </defs>
+    <rect width="800" height="450" fill="url(#bgGrad)" />
+    <!-- Grid overlay -->
+    <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+      <line x1="0" y1="90" x2="800" y2="90" />
+      <line x1="0" y1="180" x2="800" y2="180" />
+      <line x1="0" y1="270" x2="800" y2="270" />
+      <line x1="0" y1="360" x2="800" y2="360" />
+      <line x1="160" y1="0" x2="160" y2="450" />
+      <line x1="320" y1="0" x2="320" y2="450" />
+      <line x1="480" y1="0" x2="480" y2="450" />
+      <line x1="640" y1="0" x2="640" y2="450" />
+    </g>
+    <!-- Glow aura -->
+    <circle cx="400" cy="225" r="180" fill="#f97316" opacity="0.12" filter="url(#glow)" />
+    <!-- Browser window -->
+    <rect x="50" y="35" width="700" height="380" rx="16" fill="#0f0c23" stroke="#2a224a" stroke-width="2" />
+    <!-- Title bar -->
+    <rect x="50" y="35" width="700" height="42" rx="16" fill="#171233" />
+    <rect x="50" y="65" width="700" height="12" fill="#171233" />
+    <circle cx="78" cy="56" r="6" fill="#ef4444" />
+    <circle cx="98" cy="56" r="6" fill="#f59e0b" />
+    <circle cx="118" cy="56" r="6" fill="#10b981" />
+    <rect x="150" y="46" width="360" height="20" rx="6" fill="#0c091f" />
+    <text x="165" y="60" fill="#94a3b8" font-family="monospace" font-size="11">full-stack-chat-app-z6xg.onrender.com</text>
+    <rect x="620" y="46" width="110" height="20" rx="10" fill="#f97316" fill-opacity="0.2" stroke="#f97316" stroke-width="1" />
+    <text x="675" y="60" text-anchor="middle" fill="#f97316" font-family="system-ui, sans-serif" font-weight="700" font-size="10">REALTIME CHAT</text>
+    
+  <g transform="translate(90, 105)">
+    <text x="0" y="40" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="800" font-size="34">Vartalap Real-Time Chat</text>
+    <text x="0" y="70" fill="#fdba74" font-family="system-ui, sans-serif" font-weight="600" font-size="16">Socket.io • Live Presence Tracking • MERN + Capacitor</text>
+    <g transform="translate(0, 95)">
+      <rect width="130" height="32" rx="8" fill="#1e1840" stroke="#f97316" stroke-width="1" />
+      <text x="65" y="21" text-anchor="middle" fill="#fed7aa" font-family="system-ui" font-size="13" font-weight="600">💬 Socket.io</text>
+      <rect x="140" width="125" height="32" rx="8" fill="#1e1840" stroke="#10b981" stroke-width="1" />
+      <text x="202" y="21" text-anchor="middle" fill="#a7f3d0" font-family="system-ui" font-size="13" font-weight="600">🟢 Live Status</text>
+      <rect x="275" width="135" height="32" rx="8" fill="#1e1840" stroke="#8b5cf6" stroke-width="1" />
+      <text x="342" y="21" text-anchor="middle" fill="#ddd6fe" font-family="system-ui" font-size="13" font-weight="600">🔐 JWT Security</text>
+    </g>
+    <!-- Chat conversation mockup -->
+    <g transform="translate(0, 145)">
+      <rect width="620" height="135" rx="14" fill="#140f2e" stroke="#4a2e1d" stroke-width="1.5" />
+      <!-- Incoming bubble -->
+      <g transform="translate(25, 20)">
+        <circle cx="16" cy="16" r="14" fill="#6366f1" />
+        <rect x="40" width="260" height="36" rx="10" fill="#1f183d" />
+        <text x="55" y="23" fill="#ffffff" font-family="system-ui" font-size="13">Hey Prince! Did you deploy the app?</text>
+      </g>
+      <!-- Outgoing bubble -->
+      <g transform="translate(240, 70)">
+        <rect width="310" height="36" rx="10" fill="url(#accentGrad)" />
+        <text x="15" y="23" fill="#ffffff" font-family="system-ui" font-size="13">Yes! Live on Render with WebSockets active 🚀</text>
+        <circle cx="330" cy="18" r="14" fill="#f97316" />
+      </g>
+    </g>
+  </g>
+</svg>

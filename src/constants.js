@@ -1,4 +1,4 @@
-// Skills Section Logo's
+// Skills Section Logos
 import htmlLogo from "./assets/tech_logo/html.png";
 import cssLogo from "./assets/tech_logo/css.png";
 import javascriptLogo from "./assets/tech_logo/javascript.png";
@@ -17,75 +17,81 @@ import gitLogo from "./assets/tech_logo/git.png";
 import githubLogo from "./assets/tech_logo/github.png";
 import vscodeLogo from "./assets/tech_logo/vscode.png";
 import postmanLogo from "./assets/tech_logo/postman.png";
-import mcLogo from "./assets/tech_logo/mc.png";
-import figmaLogo from "./assets/tech_logo/figma.png";
-import netlifyLogo from "./assets/tech_logo/netlify.png";
 import vercelLogo from "./assets/tech_logo/vercel.png";
-import postgreLogo from "./assets/tech_logo/postgre.png";
-import csharpLogo from "./assets/tech_logo/csharp.png";
+import netlifyLogo from "./assets/tech_logo/netlify.png";
 
-// Experience Section Logo's
-import webverseLogo from "./assets/company_logo/webverse_logo.png";
-import agcLogo from "./assets/company_logo/agc_logo.png";
+// Company Logos
+import commonnextLogo from "./assets/company_logo/commonnext_logo.svg";
+import codsoftLogo from "./assets/company_logo/codsoft_logo.svg";
+import skillifymeLogo from "./assets/company_logo/skillifyme_logo.svg";
 
-// Education Section Logo's
+// Education Section Logos
 import pietLogo from "./assets/education_logo/pietLogo.png";
 import vpsLogo from "./assets/education_logo/vpsLogo.png";
 
-// Project Section Logo's
-import githubdetLogo from "./assets/work_logo/github_det.png";
-import csprepLogo from "./assets/work_logo/cs_prep.png";
-import movierecLogo from "./assets/work_logo/movie_rec.png";
-import taskremLogo from "./assets/work_logo/task_rem.png";
-import npmLogo from "./assets/work_logo/npm.png";
-import webverLogo from "./assets/work_logo/web_dig.png";
-import cmLogo from "./assets/work_logo/cm.png";
-import imagesearchLogo from "./assets/work_logo/image_search.png";
-import removebgLogo from "./assets/work_logo/remove_bg.png";
+// Real Project SVG Banners
+import splitshareBanner from "./assets/work_logo/splitshare.svg";
+import cutpulseBanner from "./assets/work_logo/cutpulse.svg";
+import storypulseBanner from "./assets/work_logo/storypulse.svg";
+import keyscoutBanner from "./assets/work_logo/keyscout.svg";
+import vartalapBanner from "./assets/work_logo/vartalap.svg";
+import bingoroyaleBanner from "./assets/work_logo/bingoroyale.svg";
+import movierecBanner from "./assets/work_logo/movierec.svg";
+import ganitgharBanner from "./assets/work_logo/ganitghar.svg";
 
 export const SkillsInfo = [
   {
     title: "Frontend",
     skills: [
-      { name: "HTML", logo: htmlLogo },
-      { name: "CSS", logo: cssLogo },
+      { name: "React.js", logo: reactjsLogo },
+      { name: "Vite", logo: reactjsLogo },
       { name: "JavaScript", logo: javascriptLogo },
-      { name: "React", logo: reactjsLogo },
-      { name: "Next Js", logo: nextjsLogo },
-      { name: "Tailwind", logo: tailwindcssLogo },
+      { name: "Tailwind CSS", logo: tailwindcssLogo },
+      { name: "HTML5", logo: htmlLogo },
+      { name: "CSS3", logo: cssLogo },
+      { name: "Next.js", logo: nextjsLogo },
       { name: "Bootstrap", logo: bootstrapLogo },
     ],
   },
   {
-    title: "Backend",
+    title: "Backend & Database",
     skills: [
-      { name: "Node JS", logo: nodejsLogo },
-      { name: "Express", logo: expressjsLogo },
-      { name: "MySQL", logo: mysqlLogo },
+      { name: "Node.js", logo: nodejsLogo },
+      { name: "Express.js", logo: expressjsLogo },
       { name: "MongoDB", logo: mongodbLogo },
       { name: "Firebase", logo: firebaseLogo },
-      { name: "PostgreSQL", logo: postgreLogo },
+      { name: "MySQL", logo: mysqlLogo },
+      { name: "REST APIs", logo: postmanLogo },
+      { name: "Socket.io", logo: nodejsLogo },
+      { name: "Razorpay", logo: expressjsLogo },
     ],
   },
   {
-    title: "Languages",
+    title: "Mobile & DevOps",
     skills: [
+      { name: "Capacitor", logo: reactjsLogo },
+      { name: "Android APK", logo: reactjsLogo },
+      { name: "GitHub Actions", logo: githubLogo },
+      { name: "Play Console", logo: gitLogo },
+      { name: "FCM Push", logo: firebaseLogo },
+      { name: "Vercel", logo: vercelLogo },
+      { name: "Render", logo: netlifyLogo },
+      { name: "Backblaze B2", logo: firebaseLogo },
+    ],
+  },
+  {
+    title: "Languages & Tools",
+    skills: [
+      { name: "JavaScript (ES6+)", logo: javascriptLogo },
       { name: "C++", logo: cppLogo },
       { name: "Python", logo: pythonLogo },
-      { name: "C#", logo: csharpLogo },
-      { name: "JavaScript", logo: javascriptLogo },
-      { name: "MySQL", logo: mysqlLogo },
-    ],
-  },
-  {
-    title: "Tools",
-    skills: [
+      { name: "SQL", logo: mysqlLogo },
       { name: "Git", logo: gitLogo },
       { name: "GitHub", logo: githubLogo },
       { name: "VS Code", logo: vscodeLogo },
       { name: "Postman", logo: postmanLogo },
-      { name: "Vercel", logo: vercelLogo },
-      { name: "Netlify", logo: netlifyLogo },
+      { name: "Technical SEO", logo: githubLogo },
+      { name: "GA4 Analytics", logo: vercelLogo },
     ],
   },
 ];
@@ -93,29 +99,50 @@ export const SkillsInfo = [
 export const experiences = [
   {
     id: 0,
-    img: webverseLogo,
-    role: "Web Development Intern",
-    company: "CodSoft",
-    date: "August 2024",
-    desc: "Successfully completed a 4-week virtual internship in Web Development at CodSoft. Worked on real-world projects, applying frontend and backend development concepts. Demonstrated strong problem-solving skills, built responsive web applications, and gained hands-on experience in modern web technologies.",
+    img: commonnextLogo,
+    role: "Full Stack Developer (Promoted from Intern)",
+    company: "CommonNext LLP (Remote)",
+    date: "Jun 2026 onwards",
+    desc: "Developed and shipped 247Shop and Asili247, hyperlocal production marketplaces connecting neighborhood shops with nearby buyers across React.js and Node.js/Express. Built production REST APIs for auth, order processing, and seller dashboards with Firebase Cloud Messaging (FCM). Integrated Razorpay payment gateway (transitioning test keys to production live keys). Converted web app into an Android app using Capacitor, automated APK builds with GitHub Actions CI/CD, and published it on Google Play Store. Handled technical SEO (Google Search Console, GA4, sitemaps, meta tags) and live product catalog sync with Google Shopping.",
     skills: [
-      "HTML",
-      "CSS",
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "Firebase",
+      "Razorpay",
+      "Capacitor (Android)",
+      "Google Play Console",
+      "GitHub Actions",
+      "FCM",
+      "Technical SEO",
+      "Google Analytics 4",
+    ],
+  },
+  {
+    id: 1,
+    img: codsoftLogo,
+    role: "Software Intern, Web Development",
+    company: "CodSoft",
+    date: "Jul 2024 - Aug 2024",
+    desc: "Successfully completed a 4-week internship in Web Development at CodSoft. Built responsive UI components, contributed to frontend and backend application tasks, and implemented clean, responsive design practices across modern web platforms.",
+    skills: [
+      "HTML5",
+      "CSS3",
       "JavaScript",
-      "React JS",
-      "Node JS",
+      "React.js",
+      "Node.js",
       "MongoDB",
       "Responsive Design",
       "REST APIs",
     ],
   },
   {
-    id: 1,
-    img: agcLogo, // replace with SkillifyMe logo
-    role: "AI & Machine Learning Intern",
+    id: 2,
+    img: skillifymeLogo,
+    role: "AI and Machine Learning Intern",
     company: "SkillifyMe",
-    date: "July 2025 - August 2025",
-    desc: "Successfully completed a summer training and internship program in Artificial Intelligence and Machine Learning at SkillifyMe. Gained hands-on experience in core ML concepts, data analysis, and model building. Worked on practical tasks to understand real-world AI applications and improved problem-solving and analytical skills.",
+    date: "Jul 2025 - Aug 2025",
+    desc: "Completed hands-on training and applied projects in Python and Machine Learning fundamentals. Gained practical experience in data analysis, model building with Scikit-learn, NumPy, and Pandas to analyze real-world datasets.",
     skills: [
       "Python",
       "Machine Learning",
@@ -132,100 +159,207 @@ export const education = [
   {
     id: 0,
     img: pietLogo,
-    school: "P.I.E.T",
+    school: "Panipat Institute of Engineering and Technology (PIET), Haryana",
     date: "Sept 2022 - July 2026",
-    grade: "7.81 CGPA",
-    desc: "I am pursuing my Bachelor of Technology (B.Tech) in Computer Science and Engineering from Panipat Institute of Engineering and Technology (P.I.E.T). During my academic journey, I have developed a strong foundation in core computer science subjects including Data Structures and Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, and Web Development. I have actively participated in technical workshops and hands-on projects, which have strengthened my problem-solving skills and practical understanding of software development. My experience at P.I.E.T has played a significant role in shaping my technical expertise and professional growth.",
+    grade: "7.5 CGPA",
+    desc: "Pursuing Bachelor of Technology (B.Tech) in Computer Science and Engineering. Built a strong foundation in Data Structures and Algorithms, Object-Oriented Programming, Database Management Systems, Computer Networks, and Full Stack Web & Mobile Development.",
     degree: "B.Tech in Computer Science and Engineering (CSE)",
   },
   {
     id: 1,
     img: vpsLogo,
     school: "GOVT SR SEC SCHOOL, Thesil Camp, Panipat",
-    date: "June 2019 - july 2021",
-    grade: "91%",
-    desc: "I completed my class 12 education from GOVT SR SEC SCHOOL, Thesil Camp, under the HBSE board, where I studied Physics, Chemistry, and Mathematics (PCM) ",
-    degree: "HBSE(XII) - PCM ",
+    date: "June 2019 - July 2021",
+    grade: "91.8%",
+    desc: "Completed Senior Secondary (12th) education under the HBSE board with Physics, Chemistry, and Mathematics (Non-Medical).",
+    degree: "Senior Secondary (12th), Non-Medical | HBSE Board",
   },
   {
     id: 2,
     img: vpsLogo,
-    school: "GIANDEEP PUBLIC SR SEC SCHOOL ,PANIPAT",
-    date: "Apr 2017 - MAY 2019",
+    school: "GIANDEEP PUBLIC SR SEC SCHOOL, Panipat",
+    date: "Apr 2017 - May 2019",
     grade: "76.5%",
-    desc: "I completed my class 10 education from GIANDEEP PUBLIC SR SEC SCHOOL ,PANIPAT, under the HBSE board, where I studied Science with Computer.",
-    degree: "HBSE(X), Science with Computer Application",
+    desc: "Completed Secondary School (10th) education under the HBSE board with Science and Computer Application.",
+    degree: "Secondary School (10th) | HBSE Board",
+  },
+];
+
+export const achievements = [
+  {
+    id: 0,
+    title: "Team Leader — Smart India Hackathon 2024",
+    subtitle: "Ministry of Education & AICTE",
+    desc: "Led a team in designing and building a medicine monitoring web application (HTML, CSS, PHP, MySQL) addressing timely pharmaceutical tracking.",
+    badge: "National Hackathon",
+  },
+  {
+    id: 1,
+    title: "Presented 'Nyay Room' Project",
+    subtitle: "Code Crafter Competition",
+    desc: "Presented an innovative legal-aid and dispute management platform at the Code Crafter Competition with interactive dispute resolution workflows.",
+    badge: "Competition Finalist",
+  },
+  {
+    id: 2,
+    title: "100+ DSA Problems Solved",
+    subtitle: "LeetCode & GeeksforGeeks",
+    desc: "Solved over 100+ algorithmic problems across arrays, trees, dynamic programming, and graphs on LeetCode and GeeksforGeeks.",
+    badge: "Problem Solving",
   },
 ];
 
 export const projects = [
   {
     id: 0,
-    title: "GitHub Profile Detective",
+    title: "Splitshare-Pro",
+    category: "Full Stack",
+    statusBadge: "🟢 Live Demo",
     description:
-      "A powerful and user-friendly React.js application designed to uncover and showcase detailed GitHub profile information. Simply enter a GitHub username, and the app fetches comprehensive data, including profile stats, repositories, followers, and contributions. The intuitive interface ensures a seamless experience, making it a must-visit tool for developers and recruiters.",
-    image: githubdetLogo,
-    tags: ["HTML", "CSS", "JavaScript", "React JS", "API"],
-    github:
-      "https://github.com/codingmastr/GitHub-Profile-Search-App-Using-React-JS",
-    webapp: "https://githubprofiledetective.netlify.app/",
+      "A modern, mobile-first bill splitting application featuring real-time group approvals, multi-UPI QR barcodes, trip kitty pool & 1-click WhatsApp settlements. Packaged for Android with Capacitor and synced in real-time with WebSockets.",
+    highlights: [
+      "Real-time expense sync with WebSockets across multiple users",
+      "Dynamic multi-UPI QR code generation for instant bank payments",
+      "Trip kitty pool management with 1-click WhatsApp balance settlements",
+      "Mobile-optimized progressive design packaged for Android via Capacitor",
+    ],
+    architecture: ["React Mobile UI", "Capacitor Native Bridge", "WebSocket Broadcast", "UPI Barcode Engine", "WhatsApp Webhook"],
+    image: splitshareBanner,
+    tags: ["React", "Vite", "Capacitor", "WebSockets", "Tailwind CSS", "UPI Integration"],
+    github: "https://github.com/Prince3636/Splitshare-Pro",
+    webapp: "https://split-share-puce.vercel.app",
   },
   {
     id: 1,
-    title: "CS Prep",
+    title: "CutPulse (WASM Video Splitter)",
+    category: "Mobile & WASM",
+    statusBadge: "🚀 WebAssembly",
     description:
-      "A full-stack quiz-based platform designed for GATE/UGC NET students to practice previous year questions and create customized tests. The platform offers comprehensive profile stats and detailed results, helping students track and improve their preparation journey effectively.",
-    image: csprepLogo,
-    tags: [
-      "React JS",
-      "Node.js",
-      "MongoDB",
-      "Express",
-      "HTML",
-      "CSS",
-      "JavaScript",
+      "High-performance, privacy-first, client-side video splitter powered by WebAssembly (FFmpeg WASM). Enables splitting long videos into WhatsApp Status, Instagram Reels, YouTube Shorts, or custom chapters directly in browser with zero server uploads, original stream quality (no re-encoding), and zero watermarks.",
+    highlights: [
+      "100% Client-side video processing powered by WebAssembly (FFmpeg WASM)",
+      "Zero server uploads guaranteeing absolute user video privacy",
+      "Lossless stream copy splitting (no re-encoding, ultra-fast exports)",
+      "Auto-segmentation for WhatsApp Status (30s) and Instagram Reels",
     ],
-    github: "https://github.com/codingmastr/CSPrep",
-    webapp: "https://csprep.netlify.app/",
+    architecture: ["Browser Video Drop", "WebAssembly Worker", "FFmpeg Core Stream", "Lossless Slice Engine", "Local Blob Export"],
+    image: cutpulseBanner,
+    tags: ["TypeScript", "FFmpeg WASM", "WebAssembly", "React", "Video Processing", "Privacy-First"],
+    github: "https://github.com/Prince3636/CutPulse",
+    webapp: "https://cutpulse-eight.vercel.app",
   },
   {
     id: 2,
-    title: "Movie Recommendation App",
+    title: "StoryPulse (Social Publishing App)",
+    category: "Full Stack",
+    statusBadge: "⚡ Production",
     description:
-      "A React-based web application that provides movie recommendations based on different criteria, such as genres, user preferences, and popular trends. The intuitive design and smooth experience make it a go-to app for movie enthusiasts.",
-    image: movierecLogo,
-    tags: ["React JS", "API", "HTML", "CSS", "JavaScript"],
-    github: "https://github.com/codingmastr/Movie-Recommendation-App",
-    webapp: "https://movie-recommendation-app-jet.vercel.app/",
+      "A social publishing platform for web and Android where writers publish stories, articles, and readers engage with them. Built with React and Vite, authentication & database via Firebase, media storage on Backblaze B2, and mobile build using Capacitor. Deployed live on Vercel and Render.",
+    highlights: [
+      "Rich article publishing editor with live preview and markdown support",
+      "Cloud media pipeline powered by Backblaze B2 object storage",
+      "Multi-role user authentication and interactive social engagement feeds",
+      "Cross-platform deployment across Web (Vercel) and Android (Capacitor)",
+    ],
+    architecture: ["React Client App", "Firebase Auth / DB", "Backblaze B2 Storage", "Capacitor Android Build", "Vercel / Render CDN"],
+    image: storypulseBanner,
+    tags: ["React", "Vite", "Firebase", "Backblaze B2", "Capacitor", "Android", "Render"],
+    github: "https://github.com/Prince3636",
+    webapp: "https://cutpulse-eight.vercel.app",
   },
   {
     id: 3,
-    title: "Email Validator NPM Package",
+    title: "KeyScout (SEO Discovery Suite)",
+    category: "AI & Analytics",
+    statusBadge: "🧭 Production Suite",
     description:
-      "An efficient and customizable NPM package for validating email addresses. Built using React.js and Node.js, it provides robust validation features to help developers ensure that email inputs meet required formats and standards.",
-    image: npmLogo,
-    tags: ["React JS", "Node.js", "NPM", "Validation"],
-    github: "https://github.com/codingmastr/cmtk-email-validator",
-    webapp: "https://www.npmjs.com/package/cmtk-email-validator",
+      "Fast, production-grade SEO Keyword Discovery & Explorer Suite featuring Google Live Autocomplete, SERP analysis, Hinglish intent clustering, Schema generator, and saved keyword management. Designed for deep search marketing analytics.",
+    highlights: [
+      "Google Live Search suggestions scraper and real-time query expander",
+      "Hinglish intent clustering algorithm classifying search intent automatically",
+      "Interactive SERP difficulty score calculator and competitor insights",
+      "JSON-LD Schema generator and keyword collection export to CSV/JSON",
+    ],
+    architecture: ["Search Analytics UI", "Node/Express Proxy", "Google Suggest Engine", "NLP Intent Classifier", "Schema JSON-LD Gen"],
+    image: keyscoutBanner,
+    tags: ["React", "Node.js", "Express", "SEO Analytics", "Google API", "Tailwind CSS"],
+    github: "https://github.com/Prince3636/KeyScout",
+    webapp: "https://github.com/Prince3636/KeyScout",
   },
   {
     id: 4,
-    title: "Task Reminder Chrome Extension Tool",
+    title: "Vartalap (Real-Time Messaging)",
+    category: "Full Stack",
+    statusBadge: "🟢 Live Demo",
     description:
-      "A productivity-boosting Chrome extension designed to help users manage and remember their daily tasks. Built using JavaScript, it offers a simple interface with reminders and task notifications to keep users on track.",
-    image: taskremLogo,
-    tags: ["JavaScript", "Chrome Extension", "HTML", "CSS"],
-    github: "https://github.com/codingmastr/Task-Reminder-Tool",
-    webapp: "chrome://extensions/?id=kngheeibjnnidhfoomkpnbeghackheci",
+      "A real-time messaging application enabling users to connect instantly with live chat, online user tracking, and secure authentication. Features a React frontend, Express.js backend with Socket.io, and Android build through Capacitor. Deployed on Vercel and Render.",
+    highlights: [
+      "Bidirectional instant messaging with sub-100ms latency via Socket.io",
+      "Live user presence status (online/offline indicators) and typing signals",
+      "Protected REST API routes with JWT and HTTP-only cookie security",
+      "Mobile APK packaging powered by Capacitor for native Android deployment",
+    ],
+    architecture: ["React Frontend", "Socket.io Transport", "Express REST Gateway", "MongoDB Cluster", "Capacitor APK Wrapper"],
+    image: vartalapBanner,
+    tags: ["React", "Node.js", "Express", "Socket.io", "Capacitor", "Render", "MERN"],
+    github: "https://github.com/Prince3636/Full-Stack-Chat-App",
+    webapp: "https://full-stack-chat-app-z6xg.onrender.com",
   },
   {
     id: 5,
-    title: "Webverse Digital",
+    title: "Bingo Royale (Multiplayer Game)",
+    category: "Full Stack",
+    statusBadge: "🎮 Live Game",
     description:
-      "The official website for Webverse Digital, a creative digital marketing agency. Built using HTML, CSS, and JavaScript, it features visually appealing animations and a clean design to showcase the agency's services.",
-    image: webverLogo,
-    tags: ["HTML", "CSS", "JavaScript", "Framer Motion"],
-    github: "https://github.com/codingmastr/Webverse-Digital",
-    webapp: "https://webversedigital.com/",
+      "A real-time multiplayer bingo game built with Vite, TypeScript, and Node.js. Features room-based gameplay, live state synchronization, interactive number tracking, and modern responsive UI with instant multiplayer actions.",
+    highlights: [
+      "Dynamic multiplayer game rooms with custom shareable room codes",
+      "Real-time synchronized game board state and automated win verification",
+      "Written in strictly-typed TypeScript for robust client/server contracts",
+      "Fluid celebratory UI animations, sound effects, and dark mode themes",
+    ],
+    architecture: ["TypeScript Client", "WebSocket Room Server", "In-Memory Board State", "Sync Validation Loop", "Celebration Audio/FX"],
+    image: bingoroyaleBanner,
+    tags: ["TypeScript", "Vite", "Node.js", "WebSockets", "Multiplayer", "Tailwind CSS"],
+    github: "https://github.com/Prince3636/Bingo-Royale",
+    webapp: "https://bingo-royale-bay.vercel.app",
+  },
+  {
+    id: 6,
+    title: "Movie Recommendation System",
+    category: "AI & Analytics",
+    statusBadge: "🤖 Machine Learning",
+    description:
+      "A machine learning-based movie recommendation system built with Python and Streamlit. Suggests relevant movies using content-based filtering techniques, similarity scoring, and NLP on comprehensive movie metadata.",
+    highlights: [
+      "Content-based filtering using Cosine Similarity on TF-IDF word vectors",
+      "Trained on 5,000+ movie titles with cast, crew, and genre tags",
+      "Interactive Streamlit web interface with instant poster fetching",
+      "Optimized model serialized with Pickle for low-latency web inference",
+    ],
+    architecture: ["Streamlit Web Interface", "Python Inference Core", "Cosine Similarity Engine", "Pickle Serializer", "Poster API Gateway"],
+    image: movierecBanner,
+    tags: ["Python", "Machine Learning", "Streamlit", "Scikit-learn", "NLP", "Pandas"],
+    github: "https://github.com/Prince3636/Movie-Recommendation-System",
+    webapp: "https://movie-recommendation-system-7bxmfshrdba4uqj5rfwk2u.streamlit.app/",
+  },
+  {
+    id: 7,
+    title: "Ganit-Ghar (Gamified EdTech)",
+    category: "Full Stack",
+    statusBadge: "🟢 Live Demo",
+    description:
+      "Interactive math learning web platform featuring 15 comprehensive topics with 10 progressive difficulty levels each (from basic to advanced), helping students learn and master mathematics step-by-step.",
+    highlights: [
+      "Curriculum of 15 structured math subjects across arithmetic and algebra",
+      "10 progressive difficulty levels per topic with unlocking mechanics",
+      "Real-time score calculation, streak tracking, and interactive feedback",
+      "Lightweight, ultra-responsive UI with zero lag on mobile devices",
+    ],
+    architecture: ["React Interactive UI", "Topic Curriculum Engine", "Level Progression State", "XP & Streak Manager", "Local Storage Cache"],
+    image: ganitgharBanner,
+    tags: ["React", "Vite", "Tailwind CSS", "EdTech", "Gamified Learning"],
+    github: "https://github.com/Prince3636/Ganit-Ghar",
+    webapp: "https://ganit-ghar.vercel.app",
   },
 ];

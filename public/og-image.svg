@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050414" />
+      <stop offset="50%" stop-color="#0f092b" />
+      <stop offset="100%" stop-color="#180e3d" />
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a855f7" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="30" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+
+  <!-- Subtle grid lines -->
+  <g opacity="0.07" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="126" x2="1200" y2="126" />
+    <line x1="0" y1="252" x2="1200" y2="252" />
+    <line x1="0" y1="378" x2="1200" y2="378" />
+    <line x1="0" y1="504" x2="1200" y2="504" />
+    <line x1="240" y1="0" x2="240" y2="630" />
+    <line x1="480" y1="0" x2="480" y2="630" />
+    <line x1="720" y1="0" x2="720" y2="630" />
+    <line x1="960" y1="0" x2="960" y2="630" />
+  </g>
+
+  <!-- Glowing background circles -->
+  <circle cx="200" cy="180" r="160" fill="#8b5cf6" opacity="0.15" filter="url(#glow)" />
+  <circle cx="1000" cy="450" r="180" fill="#06b6d4" opacity="0.12" filter="url(#glow)" />
+
+  <!-- Border Card -->
+  <rect x="40" y="40" width="1120" height="550" rx="28" fill="#09061f" fill-opacity="0.7" stroke="#3b2b68" stroke-width="2" />
+
+  <!-- Content -->
+  <g transform="translate(100, 110)">
+    <!-- Status badge -->
+    <rect width="360" height="38" rx="19" fill="#052e16" stroke="#16a34a" stroke-width="1.5" />
+    <circle cx="22" cy="19" r="6" fill="#22c55e" />
+    <text x="38" y="24" fill="#86efac" font-family="system-ui, sans-serif" font-size="14" font-weight="700">AVAILABLE FOR FULL-TIME &amp; REMOTE ROLES</text>
+
+    <!-- Name -->
+    <text x="0" y="115" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="900" font-size="64" letter-spacing="-1">Prince Kumar</text>
+    
+    <!-- Title -->
+    <text x="0" y="165" fill="url(#purpleGrad)" font-family="system-ui, sans-serif" font-weight="800" font-size="32">Full Stack Developer &amp; Production App Specialist</text>
+
+    <!-- Description -->
+    <text x="0" y="215" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="20">Shipped production marketplace applications on web and Android using React, Node.js, Express &amp; Firebase.</text>
+    <text x="0" y="245" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="20">Integrated Razorpay payments, WebAssembly video tools, and published apps on Google Play Store.</text>
+
+    <!-- Tech Badges -->
+    <g transform="translate(0, 290)">
+      <rect width="110" height="36" rx="10" fill="#1e1840" stroke="#8b5cf6" />
+      <text x="55" y="23" text-anchor="middle" fill="#c4b5fd" font-family="system-ui" font-size="14" font-weight="700">React.js</text>
+
+      <rect x="125" width="110" height="36" rx="10" fill="#1e1840" stroke="#8b5cf6" />
+      <text x="180" y="23" text-anchor="middle" fill="#c4b5fd" font-family="system-ui" font-size="14" font-weight="700">Node.js</text>
+
+      <rect x="250" width="160" height="36" rx="10" fill="#1e1840" stroke="#06b6d4" />
+      <text x="330" y="23" text-anchor="middle" fill="#67e8f9" font-family="system-ui" font-size="14" font-weight="700">Capacitor Android</text>
+
+      <rect x="425" width="150" height="36" rx="10" fill="#1e1840" stroke="#ec4899" />
+      <text x="500" y="23" text-anchor="middle" fill="#f472b6" font-family="system-ui" font-size="14" font-weight="700">WebAssembly</text>
+
+      <rect x="590" width="130" height="36" rx="10" fill="#1e1840" stroke="#10b981" />
+      <text x="655" y="23" text-anchor="middle" fill="#6ee7b7" font-family="system-ui" font-size="14" font-weight="700">Razorpay Live</text>
+
+      <rect x="735" width="140" height="36" rx="10" fill="#1e1840" stroke="#f59e0b" />
+      <text x="805" y="23" text-anchor="middle" fill="#fde68a" font-family="system-ui" font-size="14" font-weight="700">Technical SEO</text>
+    </g>
+
+    <!-- Footer Stats / URL -->
+    <g transform="translate(0, 385)">
+      <text x="0" y="0" fill="#38bdf8" font-family="monospace" font-size="18" font-weight="700">🌐 prince-portfolio-nu-drab.vercel.app</text>
+      <text x="550" y="0" fill="#a78bfa" font-family="system-ui" font-size="16" font-weight="600">GitHub: Prince3636 • SIH 2024 Team Leader</text>
+    </g>
+  </g>
+</svg>

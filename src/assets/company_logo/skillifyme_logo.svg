@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="skGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="36" fill="#120e24" />
+  <rect x="4" y="4" width="192" height="192" rx="32" fill="none" stroke="url(#skGrad)" stroke-width="3" stroke-opacity="0.7" />
+  <g transform="translate(50, 36)">
+    <circle cx="50" cy="45" r="34" fill="url(#skGrad)" opacity="0.25" />
+    <path d="M50,15 C33,15 20,28 20,45 C20,58 27,69 38,73 L38,82 L62,82 L62,73 C73,69 80,58 80,45 C80,28 67,15 50,15 Z" fill="url(#skGrad)" />
+    <circle cx="50" cy="45" r="10" fill="#ffffff" />
+  </g>
+  <text x="100" y="165" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="700" font-size="19" letter-spacing="0.5">SkillifyMe</text>
+</svg>
