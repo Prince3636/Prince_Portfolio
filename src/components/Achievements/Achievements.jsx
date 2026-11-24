@@ -1,7 +1,7 @@
 import React from "react";
 import { achievements } from "../../constants";
 import Tilt from "react-parallax-tilt";
-import { FaTrophy, FaAward, FaCode, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaTrophy, FaAward, FaCode } from "react-icons/fa";
 
 const getIcon = (id) => {
   switch (id) {
@@ -34,7 +34,7 @@ const Achievements = () => {
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {achievements.map((item) => (
           <Tilt
             key={item.id}
@@ -69,48 +69,6 @@ const Achievements = () => {
             </div>
           </Tilt>
         ))}
-      </div>
-
-      {/* Live GitHub Contributions Heatmap Banner */}
-      <div className="border border-gray-800 bg-gray-900/80 backdrop-blur-md rounded-2xl p-6 sm:p-8 shadow-[0_0_25px_rgba(130,69,236,0.15)]">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-gray-800">
-          <div>
-            <div className="flex items-center gap-2.5">
-              <FaGithub className="text-purple-400 text-2xl" />
-              <h3 className="text-lg sm:text-xl font-bold text-white">
-                Live GitHub Contributions &amp; Code Activity
-              </h3>
-            </div>
-            <p className="text-gray-400 text-xs sm:text-sm mt-1">
-              Real-time commit calendar tracking daily coding consistency across 25+ repositories.
-            </p>
-          </div>
-
-          <a
-            href="https://github.com/Prince3636"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-purple-600/90 hover:bg-purple-600 text-white text-xs font-bold transition shadow-md shadow-purple-600/25"
-          >
-            <span>Follow @Prince3636</span>
-            <FaExternalLinkAlt size={10} />
-          </a>
-        </div>
-
-        {/* Heatmap Graphic Container */}
-        <div className="overflow-x-auto py-2">
-          <img
-            src="https://ghchart.rshah.org/8245ec/Prince3636"
-            alt="Prince Kumar's GitHub Contributions Chart"
-            className="w-full min-w-[700px] h-auto rounded-lg filter contrast-125"
-            loading="lazy"
-          />
-        </div>
-
-        <div className="flex flex-wrap items-center justify-between gap-3 mt-4 text-xs text-gray-400 pt-3 border-t border-gray-800/60">
-          <span>Profile: <span className="text-white font-mono">github.com/Prince3636</span></span>
-          <span className="text-purple-300">Active Open-Source Projects • Real-Time Web &amp; Android Apps</span>
-        </div>
       </div>
     </section>
   );

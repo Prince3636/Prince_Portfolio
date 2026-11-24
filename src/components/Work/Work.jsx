@@ -217,34 +217,34 @@ const Work = () => {
                 </div>
               </div>
 
-              {/* Bottom Actions Bar */}
-              <div className="px-5 pb-5 pt-0 border-t border-gray-800/60 flex items-center gap-2 pt-3">
+              {/* Bottom Actions Bar - Fixed single-line flex with whitespace-nowrap */}
+              <div className="px-5 pb-5 pt-3 border-t border-gray-800/60 flex items-center gap-2">
                 <a
                   href={project.webapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-1.5 bg-purple-600/90 hover:bg-purple-600 text-white text-xs font-semibold py-2 px-3 rounded-lg transition shadow-sm hover:shadow-purple-500/20"
+                  className="flex-1 min-w-0 flex items-center justify-center gap-1.5 bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold py-2.5 px-2 rounded-xl transition shadow-md shadow-purple-600/20 whitespace-nowrap"
                 >
-                  <span>Live Demo</span>
-                  <FaExternalLinkAlt size={10} />
+                  <span className="whitespace-nowrap truncate">Live Demo</span>
+                  <FaExternalLinkAlt size={9} className="flex-shrink-0" />
                 </a>
 
                 <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-1.5 bg-gray-800 hover:bg-gray-700 text-gray-200 text-xs font-semibold py-2 px-3 rounded-lg border border-gray-700 transition"
+                  className="flex-1 min-w-0 flex items-center justify-center gap-1.5 bg-gray-800/90 hover:bg-gray-750 text-gray-200 hover:text-white text-xs font-bold py-2.5 px-2 rounded-xl border border-gray-700 transition whitespace-nowrap"
                 >
-                  <FaGithub size={12} />
-                  <span>GitHub</span>
+                  <FaGithub size={12} className="flex-shrink-0" />
+                  <span className="whitespace-nowrap truncate">GitHub</span>
                 </a>
 
                 <button
                   onClick={() => handleOpenModal(project)}
-                  title="View Full Architecture Details"
-                  className="p-2 text-gray-400 hover:text-purple-400 hover:bg-gray-800 rounded-lg border border-gray-700 transition"
+                  title="View Architecture Details"
+                  className="w-9 h-9 flex items-center justify-center flex-shrink-0 text-gray-400 hover:text-purple-300 hover:bg-gray-800 rounded-xl border border-gray-700 transition"
                 >
-                  <span className="text-xs font-bold px-1">Info</span>
+                  <span className="text-[11px] font-bold">Info</span>
                 </button>
               </div>
             </div>
