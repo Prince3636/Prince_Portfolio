@@ -43,12 +43,43 @@ const Contact = () => {
         },
         (error) => {
           setLoading(false);
-          console.error("Error sending message:", error);
-          toast.error("Failed to send message. Please try again or email directly.", {
-            position: "top-right",
-            autoClose: 4000,
-            theme: "dark",
-          });
+          console.error("Error sending message via EmailJS:", error);
+
+          // Fallback: directly prepare mailto link with filled fields so message is never lost
+          try {
+            const userName = form.current.user_name?.value || "";
+            const userEmail = form.current.user_email?.value || "";
+            const subj = form.current.subject?.value || "Portfolio Contact Message";
+            const msg = form.current.message?.value || "";
+            const body = encodeURIComponent(
+              `Name: ${userName}\nEmail: ${userEmail}\n\nMessage:\n${msg}`
+            );
+            const mailtoUrl = `mailto:Prince722663@gmail.com?subject=${encodeURIComponent(
+              subj
+            )}&body=${body}`;
+
+            toast.info(
+              "Redirecting to direct email to ensure your message reaches me! ✉️",
+              {
+                position: "top-right",
+                autoClose: 3500,
+                theme: "dark",
+              }
+            );
+
+            setTimeout(() => {
+              window.location.href = mailtoUrl;
+            }, 1000);
+          } catch (e) {
+            toast.error(
+              "Please email me directly at Prince722663@gmail.com",
+              {
+                position: "top-right",
+                autoClose: 4000,
+                theme: "dark",
+              }
+            );
+          }
         }
       );
   };
