@@ -76,8 +76,9 @@ const Contact = () => {
 
     // Step 1: Attempt silent FormSubmit background AJAX delivery (Zero-signup required)
     try {
+      // FormSubmit secure token linked to Prince722663@gmail.com
       const response = await fetch(
-        "https://formsubmit.co/ajax/Prince722663@gmail.com",
+        "https://formsubmit.co/ajax/49b8b268a89d105d9557293f0d6f7b4c",
         {
           method: "POST",
           headers: {
@@ -87,7 +88,7 @@ const Contact = () => {
           body: JSON.stringify({
             name: userName,
             email: userEmail,
-            _subject: `New Portfolio Message: ${subj} (from ${userName})`,
+            _subject: `Portfolio Message: ${subj} (from ${userName})`,
             message: msg,
           }),
         }
