@@ -1,8 +1,18 @@
 import React, { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaWhatsapp, FaGithub, FaLinkedin, FaTwitter, FaCopy, FaCheck } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaPhoneAlt,
+  FaMapMarkerAlt,
+  FaWhatsapp,
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaCopy,
+  FaCheck,
+  FaPaperPlane,
+} from "react-icons/fa";
 
 const Contact = () => {
   const form = useRef();
@@ -20,68 +30,109 @@ const Contact = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const sendEmail = (e) => {
+  const openWhatsAppWithMessage = () => {
+    const userName = form.current?.user_name?.value?.trim() || "";
+    const subj = form.current?.subject?.value?.trim() || "";
+    const msg = form.current?.message?.value?.trim() || "";
+
+    let text = "Hi Prince, I checked out your portfolio and would like to connect!";
+    if (userName || subj || msg) {
+      text = `Hi Prince,\n\nName: ${userName || "Anonymous"}\nSubject: ${
+        subj || "Opportunity"
+      }\nMessage: ${msg || "Looking forward to speaking with you!"}`;
+    }
+
+    const waUrl = `https://wa.me/917015708661?text=${encodeURIComponent(text)}`;
+    window.open(waUrl, "_blank");
+  };
+
+  const openGmailDirect = () => {
+    const userName = form.current?.user_name?.value?.trim() || "";
+    const userEmail = form.current?.user_email?.value?.trim() || "";
+    const subj =
+      form.current?.subject?.value?.trim() ||
+      "Full-Stack Developer Opportunity for Prince";
+    const msg = form.current?.message?.value?.trim() || "";
+
+    const bodyText = `Hi Prince,\n\nName: ${userName || "Visitor"}\nEmail: ${
+      userEmail || "Not provided"
+    }\n\nMessage:\n${msg || "We are interested in discussing an opportunity with you."}`;
+
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=Prince722663@gmail.com&su=${encodeURIComponent(
+      subj
+    )}&body=${encodeURIComponent(bodyText)}`;
+
+    window.open(gmailUrl, "_blank");
+  };
+
+  const sendEmail = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    emailjs
-      .sendForm(
-        "service_zus4vhe",
-        "template_nxcjst1",
-        form.current,
-        "DRh4Mz2Nppq7Ttntp"
-      )
-      .then(
-        () => {
-          setLoading(false);
-          form.current.reset();
-          toast.success("Message sent successfully! 🚀", {
-            position: "top-right",
-            autoClose: 3500,
-            theme: "dark",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.error("Error sending message via EmailJS:", error);
+    const userName = form.current.user_name?.value || "";
+    const userEmail = form.current.user_email?.value || "";
+    const subj = form.current.subject?.value || "Portfolio Contact Message";
+    const msg = form.current.message?.value || "";
 
-          // Fallback: directly prepare mailto link with filled fields so message is never lost
-          try {
-            const userName = form.current.user_name?.value || "";
-            const userEmail = form.current.user_email?.value || "";
-            const subj = form.current.subject?.value || "Portfolio Contact Message";
-            const msg = form.current.message?.value || "";
-            const body = encodeURIComponent(
-              `Name: ${userName}\nEmail: ${userEmail}\n\nMessage:\n${msg}`
-            );
-            const mailtoUrl = `mailto:Prince722663@gmail.com?subject=${encodeURIComponent(
-              subj
-            )}&body=${body}`;
-
-            toast.info(
-              "Redirecting to direct email to ensure your message reaches me! ✉️",
-              {
-                position: "top-right",
-                autoClose: 3500,
-                theme: "dark",
-              }
-            );
-
-            setTimeout(() => {
-              window.location.href = mailtoUrl;
-            }, 1000);
-          } catch (e) {
-            toast.error(
-              "Please email me directly at Prince722663@gmail.com",
-              {
-                position: "top-right",
-                autoClose: 4000,
-                theme: "dark",
-              }
-            );
-          }
+    // Step 1: Attempt silent FormSubmit background AJAX delivery (Zero-signup required)
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/Prince722663@gmail.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: userName,
+            email: userEmail,
+            _subject: `New Portfolio Message: ${subj} (from ${userName})`,
+            message: msg,
+          }),
         }
       );
+
+      const data = await response.json();
+      if (response.ok && (data.success === "true" || data.success === true)) {
+        setLoading(false);
+        form.current.reset();
+        toast.success("Message sent successfully directly to Prince! 🚀", {
+          position: "top-right",
+          autoClose: 4000,
+          theme: "dark",
+        });
+        return;
+      }
+    } catch (err) {
+      console.log("Background service unavailable, switching to direct mail link...", err);
+    }
+
+    // Step 2: Seamless fallback to Gmail Web or native mail app so zero messages are lost
+    setLoading(false);
+    const bodyText = `Hi Prince,\n\nName: ${userName}\nEmail: ${userEmail}\n\nMessage:\n${msg}`;
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=Prince722663@gmail.com&su=${encodeURIComponent(
+      subj
+    )}&body=${encodeURIComponent(bodyText)}`;
+    const mailtoUrl = `mailto:Prince722663@gmail.com?subject=${encodeURIComponent(
+      subj
+    )}&body=${encodeURIComponent(bodyText)}`;
+
+    toast.info("Opening your email composer to deliver directly! ✉️", {
+      position: "top-right",
+      autoClose: 3500,
+      theme: "dark",
+    });
+
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      window.location.href = mailtoUrl;
+    } else {
+      const win = window.open(gmailUrl, "_blank");
+      if (!win) {
+        window.location.href = mailtoUrl;
+      }
+    }
   };
 
   return (
@@ -282,20 +333,58 @@ const Contact = () => {
                 />
               </div>
 
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-600 py-3.5 text-white font-bold rounded-xl hover:opacity-95 transition shadow-lg shadow-purple-600/30 text-sm sm:text-base flex items-center justify-center gap-2"
-              >
-                {loading ? (
-                  <span>Sending Message...</span>
-                ) : (
-                  <>
-                    <span>Send Message</span>
-                    <span>✉️</span>
-                  </>
-                )}
-              </button>
+              <div className="space-y-3 pt-2">
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-600 py-3.5 text-white font-bold rounded-xl hover:opacity-95 transition shadow-lg shadow-purple-600/30 text-sm sm:text-base flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  {loading ? (
+                    <span>Sending Message...</span>
+                  ) : (
+                    <>
+                      <FaPaperPlane size={14} />
+                      <span>Send Message Directly</span>
+                    </>
+                  )}
+                </button>
+
+                {/* Instant Zero-Signup Quick Actions */}
+                <div className="pt-2">
+                  <div className="flex items-center gap-2 mb-2.5">
+                    <div className="h-px bg-gray-800 flex-1"></div>
+                    <span className="text-[11px] font-medium text-gray-500 uppercase tracking-wider">
+                      Or Connect Instantly via
+                    </span>
+                    <div className="h-px bg-gray-800 flex-1"></div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <button
+                      type="button"
+                      onClick={openGmailDirect}
+                      className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-red-950/30 hover:bg-red-950/60 border border-red-800/40 text-red-300 hover:text-red-200 text-xs font-semibold transition cursor-pointer"
+                    >
+                      <FaEnvelope size={13} />
+                      <span>Open in Gmail Web</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={openWhatsAppWithMessage}
+                      className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-emerald-950/30 hover:bg-emerald-950/60 border border-emerald-800/40 text-emerald-300 hover:text-emerald-200 text-xs font-semibold transition cursor-pointer"
+                    >
+                      <FaWhatsapp size={14} />
+                      <span>Chat on WhatsApp</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div className="text-center pt-2">
+                  <p className="text-[11px] text-gray-500">
+                    🔒 Zero-friction: No account or registration needed. Message goes directly to Prince.
+                  </p>
+                </div>
+              </div>
             </form>
           </div>
         </div>
